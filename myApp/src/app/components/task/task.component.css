@@ -1,0 +1,147 @@
+.gridHeader-buttons{
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.control-buttons a{
+    font-size: 12px;
+    line-height: 1;
+}
+
+.task-status-option{
+    display: inline;
+    border: 1px solid #777;
+    padding: 2px;
+    font-size: 12px;
+}
+
+.task-container{
+    padding: 10px 20px 0;
+}
+
+.project-block{
+    margin-top: 10px;
+    border: solid 1px #ababab;
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.2);
+    background: #fff;
+    border-radius: 5px;
+}
+
+.project-block-header{
+    padding: 5px 10px;
+    background: #E1E1E1;
+    border-bottom: solid 1px #ccc;
+}
+
+.project-block-body{
+    padding: 10px;
+}
+
+.task-desc p{
+  height: 20px;
+  overflow: hidden;
+}
+
+.task-priority h6{
+    display: inline;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.task-priority.critical h6{
+  background: #F54337;
+}
+
+.task-priority.critical1 h6{
+  background: #F54337;
+}
+
+.task-priority.normal h6{
+  background: #32cd32;
+}
+
+.task-priority.low h6{
+  background: #0000cd;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 101px;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  border-left: solid 1px #d1d1d1;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #eeeeee;
+  display: block;
+  transition: 0.3s;
+  background: #a1a1a1;
+  cursor: default;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 24px;
+  padding: 0;
+}
+
+.dataWrapper.show-sidenav{
+  margin-right: 250px;
+}
+
+.sidenav.show-sidenav{
+  width: 250px;
+}
+
+.dataWrapper.hide-sidenav{
+  margin-right: 0px;
+}
+
+.sidenav.hide-sidenav{
+  width: 0px;
+}
+
+.team-add{
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.search-input:focus ~ .search-list{
+  display: block;
+}
+
+.search-list{
+  position: absolute;
+  left: 10px;
+  top: 44px;
+  z-index: 99;
+  border: solid 1px #ccc;
+  background: white;
+  width: 186px;
+  box-shadow: 1px 1px 1px 1px #ababab;
+  display: none;
+}
+
+.team-add li{
+  padding: 5px;
+  border-bottom: solid 1px #ccc;
+}
+
+.input-group-addon i{
+  font-size: 17px;
+  cursor:pointer;
+}

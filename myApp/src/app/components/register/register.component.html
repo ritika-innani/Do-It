@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="container userForm">
+    <h1 class="page-header">Registration Form</h1>
+
+    <div class="row show-hide-message">
+      <div [ngClass]="messageClass">
+        {{ message }}
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" autocomplete="off" name="userForm" novalidate> 
+
+      <!-- name Input -->
+      <div class="form-group">
+        <label for="name">Name</label>
+            <input type="text" class="form-control" #name="ngModel" minlength="3" placeholder="Full Name" name="name" ngModel required />
+          <!-- Validation -->
+          <div *ngIf="name.errors && name.dirty" class="Warning">
+            <div [hidden]="!name.errors.required" >
+                <span>Please Enter Name</span>
+            </div>
+            <div [hidden]="!name.errors.minlength" >      
+                <span>Please Enter at least 3 charaters</span>
+            </div>
+          </div>
+          
+      </div>
+
+      <!-- Email Input -->
+      <div class="form-group">
+        <label for="email">Email</label>
+            <input type="text" class="form-control" #email="ngModel" placeholder="Email Address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email" ngModel required />
+          
+          <!-- Validation -->
+          <div *ngIf="email.errors && email.dirty" class="Warning">
+            <div [hidden] = "!email.errors.required">
+                <span>Please Enter an Email Address</span>
+            </div>
+            <div [hidden] = "!email.errors.pattern">
+                <span>Please Enter a valid Email Address</span>
+            </div>
+        </div>
+        
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-group">
+        <label for="password">Password</label>
+         <input type="password" class="form-control" #password="ngModel" placeholder="Password" minlength="8" name="password" ngModel required />
+          <!-- Validation -->
+          <div *ngIf="password.errors && password.dirty" class="Warning">
+            <div [hidden] = "!password.errors.required">
+                <span>Please Enter a password</span>
+            </div>
+            <div [hidden]="!password.errors.minlength" >      
+                <span>Minimum length: 8</span>
+            </div>
+<!-- pattern="/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/"
+            <div [hidden] = "!pass.errors.pattern">
+                <span>Password must contain at least one special character and a number.</span>
+            </div>
+-->
+        </div>
+          
+      </div>
+
+      <!-- Company Name Input -->
+       <div class="form-group">
+        <label for="company">Company</label>
+            <input type="text" class="form-control" #company="ngModel" minlength="3" placeholder="Company Name" name="company" ngModel required />
+          <!-- Validation -->
+          <div *ngIf="company.errors && company.dirty" class="Warning">
+            <div [hidden]="!company.errors.required" >
+                <span>Please Enter Name</span>
+            </div>
+            <div [hidden]="!company.errors.minlength" >      
+                <span>Please Enter at least 3 charaters</span>
+            </div>
+          </div>
+      </div>
+
+      <button [disabled]="!userForm.form.valid" type="submit" class="form button">Register Me</button>
+
+    </form>
+</div>
+

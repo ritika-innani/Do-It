@@ -1,0 +1,60 @@
+<div class="dataWrapper" [ngClass]="displaySidenav" id="main">
+    <h1 class="pageHeader">MY TASKS</h1>
+    <div class="task-container">
+      <div class="control-buttons">
+        <a class="btn btn-primary btn-lg" role="button" (click)="newTaskBlock.show()">Add New Task</a>
+        <app-new-task #newTaskBlock (taskAdded)="getTasks($event)"></app-new-task>
+        <a class="btn btn-primary btn-lg" role="button" (click)="sidenavToggle()">Add Team Members</a>
+      </div>
+      <div class="task-grid-body">
+          <div class="project-block" *ngFor="let task of allTasks">
+              <div class="project-block-header">
+                  <div class="row">
+                      <div class="col-sm-4"><h4>{{task.project}}</h4></div>
+                      <div class="col-sm-2"><h4>Priority</h4></div>
+                      <div class="col-sm-2"><h4>Status</h4></div>
+                      <div class="col-sm-4"><h4>Actions</h4></div>
+                      <div class="clear"></div>
+                  </div>
+              </div>
+              <div class="project-block-body">
+                  <div class="project-task">
+                      <div class="row">
+                          <div class="col-sm-4 task-desc">
+                            <h4>{{task.task}}</h4>
+                            <p>{{task.description}}</p>
+                          </div>
+                          <input type="hidden" #taskPriority value="{{task.priority}}">
+                          <div class="col-sm-2 task-priority critical" [ngClass]="{'critical1' : taskPriority.value=='critical', 'normal' : taskPriority.value=='normal', 'low' : taskPriority.value=='low'}"><h6>{{task.priority}}</h6></div>
+                          <div class="col-sm-2">
+                              <p class="task-status-option">{{task.status}}</p>
+                          </div>
+                          <div class="col-sm-4 control-buttons">
+                            <a class="btn btn-primary btn-lg" role="button" (click)="editTaskBlock.show(task)">Edit</a>
+                            <app-update-task #editTaskBlock (taskUpdated)="getTasks($event)"></app-update-task>
+                            <a class="btn btn-primary btn-lg" role="button" (click)="deletePopup.show(task._id)">Delete</a>
+                            <app-delete-task #deletePopup (taskDeleted)="getTasks($event)"></app-delete-task>
+                          </div>
+                          <div class="clear"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div id="mySidenav" class="sidenav"  [ngClass]="displaySidenav">
+  <a class="closebtn" (click)="sidenavToggle()">&times;</a>
+  <a>My Team</a>
+  <div class="team-add input-group">
+    <input type="text" class="form-control search-input" placeholder="Add a Member.." #newMember (keyup)="0" [(ngModel)]="member" />
+    <span class="input-group-addon" (click)="addMember(newMember.value)"><i class="material-icons">person_add</i></span>
+    <ul class="search-list">
+      <li *ngFor="let user of allUsers | memberFilter:newMember.value" (click)="function(this.innerText)">
+        {{ user.email }}
+      </li>
+    </ul>
+  </div>
+</div>
+<!--<i class="material-icons">create</i><i class="material-icons">delete</i>-->

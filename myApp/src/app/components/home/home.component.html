@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="bg-class">
+    <div class="container layer1">
+        <h1 class="heading">Task Management Made Simple</h1>
+        <h3 class="heading">Millions of people rely on Doit to get their tasks done</h3>
+        <a *ngIf="!authenticateService.loggedIn()" class="btn btn-primary btn-lg start-button" role="button" routerLink="/register">Get Started, It's Free</a>
+        <a *ngIf="authenticateService.loggedIn()" class="btn btn-primary btn-lg start-button" role="button" routerLink="/dashboard">Go to Dashboard --></a>
+    </div>
+</div>

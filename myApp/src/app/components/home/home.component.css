@@ -1,0 +1,28 @@
+.bg-class{
+    margin-top: 50px;
+    background: url('../../../assets/images/back-1.jpg') center left / cover no-repeat;
+    min-height: 612px;
+}
+
+.heading{
+    color: white;
+    margin-right: 20px;
+}
+
+.layer1{
+    padding: 100px;
+}
+
+.layer1 h1{
+    width: 400px;
+   font-size: 48px;
+}
+
+.layer1 h3{
+    
+}
+
+.start-button{
+    margin-top: 50px;
+    background: #233E89;
+}

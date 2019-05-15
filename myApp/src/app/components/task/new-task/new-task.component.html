@@ -1,0 +1,90 @@
+<div bsModal #newTaskBlock="bs-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" (click)="hide()" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">New Task</h4>
+            </div>
+            <form class="new-task-form" #taskForm="ngForm" name="taskForm" (ngSubmit)="onSubmit(taskForm.value, assignee.value, priority.value)">
+
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="project">Project:</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" #project="ngModel" name="project" placeholder="Add a Project" ngModel required>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="task">Task:</label>
+                    <div class="col-sm-9">
+                    <input type="text" class="form-control" id="task-title" name="task" #task="ngModel" placeholder="Create a Task" ngModel required>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="description">Description:</label>
+                    <div class="col-sm-9">
+                      <textarea class="form-control" #description="ngModel" name="description" placeholder="Description" ngModel></textarea>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label col-sm-3" for="due_date">Due Date:</label>
+                      <div class="col-sm-4">
+                          <md-form-field>
+                              <input mdInput [(ngModel)]="due_date" name="due_date" [mdDatepicker]="picker" placeholder="Choose a date" ngModel />
+                              <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+                              <md-datepicker #picker></md-datepicker>
+                          </md-form-field>
+                      </div>
+                      <div class="clear"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="assigned_to">Assigned To:</label>
+                    <div class="col-sm-6">
+                      <a class="btn btn-default btn-select btn-select-light">
+                        <input type="hidden" class="btn-select-input" #assignee name="assignee" />
+                        <span class="btn-select-value">Select a Member</span>
+                        <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                        <ul>
+                          <li *ngFor = "let member of allTeamMembers">{{member.member}}</li>
+                        </ul>
+                      </a>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-3" for="priority">Priority:</label>
+                    <div class="col-sm-6">
+                      <a class="btn btn-default btn-select btn-select-light">
+                        <input type="hidden" class="btn-select-input" #priority name="priority" />
+                        <span class="btn-select-value">Select priority</span>
+                        <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                        <ul>
+                          <li>Critical</li>
+                          <li>Normal</li>
+                          <li>Low</li>
+                        </ul>
+                      </a>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default model-cancel button" (click)="hide()">Cancel</button>
+                  <button type="submit" class="btn btn-default model-yes button">Save Task</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+

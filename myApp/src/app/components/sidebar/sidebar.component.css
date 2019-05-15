@@ -1,0 +1,105 @@
+.sideBar{
+    min-width:210px;
+	  max-width:210px;
+    overflow-y: auto;
+    overflow-x: hidden;
+	  position: fixed;
+    top: 101px;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #d1d1d1;
+    color: #666;
+}
+
+.sideHeading{
+    padding: 28px 18px 15px;
+}
+
+.sideHeading a{
+    color: #666;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.navButtons{
+	display: inline-block;
+    min-width: 100%;
+    position: relative;
+}
+
+.navButtons .navItem{
+	padding: 10px 20px;
+    font-size: 14px;
+    vertical-align: middle;
+    border-left: solid 4px transparent;
+}
+
+.navButtons .navItem a{
+    color: #666;
+}
+
+.navItem.active{
+	border-left: solid 4px #0980C4 !important;
+	cursor:default;
+	color:#0980C4 !important;
+	font-weight:bold;
+}
+
+.navItem.active a{
+    color:#0980C4 !important;
+}
+
+.navButtons .navItem span{
+	height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+.navButtons .navItem:hover{
+	cursor:pointer;
+	background-color:#e1e1e1;
+}
+
+.teams i{
+    float: right;
+}
+
+.team-members{
+    margin: 5px 10px;
+    background: #f9f9f9;
+    border: 1px solid rgb(171, 171, 171);
+    box-shadow: rgb(171, 171, 171) 1px 1px 3px;
+    width: 190px;
+    overflow: hidden;
+}
+
+.team-members h4{
+    display: inline-block;
+}
+
+.team-members ul{
+    margin: 0;
+}
+
+.team-members ul:last-child{
+    border: none;
+}
+
+.team-members li{
+    padding: 5px;
+    border-bottom: solid 1px #aaa;
+    cursor: default;
+}
+
+.team-members-head{
+    border-bottom: solid 1px #ababab;
+    padding: 10px 7px;
+    background: #E1E1E1;
+}
+
+.team-members-head i{
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,56 @@
+<div class="sideBar">
+    <div class="sideHeading">
+        <a>WELCOME !</a>
+    </div>
+    <div class="navButtons">
+        <div class="mytasks">
+            <div id="mytasks" class= "navItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+                <a routerLink="/dashboard">
+                    <span class="material-icons">description</span>
+                    &ensp;My Tasks
+                </a>
+            </div>
+        </div>
+        <div class="projects">
+            <div id="projects" class="navItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/dashboard', {outlets: {'childComponent':['myprojects'] }}]">
+                    <span class="material-icons">folder</span>
+                    &ensp;Projects
+                </a>
+            </div>
+        </div>
+        <div class="inbox">
+            <div id="inbox" class="navItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['/dashboard', {outlets: {'childComponent':['inbox'] }}]">
+                    <span class="material-icons">message</span>
+                    &ensp;Inbox
+                </a>
+            </div>
+        </div>
+        <div class="calendar">
+            <div id="calendar" class="navItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a>
+                    <span class="material-icons">date_range</span>
+                    &ensp;Calendar
+                </a>
+            </div>
+        </div>
+        <div class="teams">
+            <div class="navItem team-add" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" data-toggle="collapse" data-target="#teams" (click)="changeArrow()">
+                <a>
+                    <span class="material-icons">group</span>
+                    &ensp;My Team
+                </a>
+                <i class="material-icons" [innerHTML]="content"></i>
+            </div>
+            <div class="collapse team-members" id="teams">
+                <div class="team-members-head">
+                    <h4>Team Members</h4>
+                </div>
+                <ul>
+                    <li *ngFor = "let member of allTeamMembers">{{member.member}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

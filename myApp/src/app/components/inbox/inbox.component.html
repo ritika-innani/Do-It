@@ -1,0 +1,24 @@
+<div class="dataWrapper">
+    <h1 class="pageHeader">INBOX</h1>
+  <div *ngIf="showMessages" class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Notifications</div>
+    <!-- List group -->
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let message of allMessages;let i=index">{{i+1}}. &nbsp;{{message.message}}</li>
+
+    </ul>
+  </div>
+  <div class="row" *ngIf="!showMessages">
+    <div class="col-sm-12">
+      <div class="no-item-display-wrapper">
+        <div class="no-item-display">
+          <span class="material-icons">message</span>
+          <h3>NO NOTIFICATIONS!</h3>
+          <p>You're up-to-date with your team's work</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

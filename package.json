@@ -1,0 +1,23 @@
+{
+  "name": "mean_application",
+  "version": "1.0.0",
+  "description": "task management angular application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "ANGULAR",
+    "2",
+    "PROJECT"
+  ],
+  "author": "ritika innani",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^8.0.0",
+    "mongoose": "^4.11.9",
+    "mysql": "^2.14.1"
+  }
+}
